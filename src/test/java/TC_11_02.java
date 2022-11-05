@@ -16,7 +16,7 @@ public class TC_11_02 {
 //         Test Data
         String url = "https://openweathermap.org/";
         String optionTemperature = "Imperial";
-        String expectedResult = "Imperial: °F, mph";
+        String expectedResult = "F";
 
 //        Act
         driver.get(url);
@@ -26,13 +26,15 @@ public class TC_11_02 {
                 By.xpath("//div[text() = 'Imperial: °F, mph']")
         );
         searchOptionTemperature.click();
-
         Thread.sleep(1000);
 
-//        String actualResult = driver.getTitle(); Work on this
+        WebElement checkIfTemperetureIsInImperial = driver.findElement(By.xpath("//span[@class = 'heading']")
+        );
+        String actualResult = checkIfTemperetureIsInImperial.getText();
+        Thread.sleep(5000);
 
 //        Assert
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualResult.substring(actualResult.length() -1), expectedResult);
 
         driver.quit();
     }
