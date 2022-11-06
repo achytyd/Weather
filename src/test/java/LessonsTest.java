@@ -74,5 +74,20 @@ public class LessonsTest {
 
 //    }
 
+//    WebDriverWait wait = new WebDriverWait(driver, 25);
+//        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(
+//                By.xpath("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]")));
+//
+//        wait.until(ExpectedConditions.elementToBeClickable(
+//                By.xpath("//div[@class='recaptcha-checkbox-border']"))).click();
+//        Thread.sleep(5000);
+
+//    //a[contains(@class, 'btn_block orange round') " +
+//                    "or contains(@class, 'ow-btn round btn-orange') ]")).size();
+
+//    for (String winHandle : driver.getWindowHandles()) {
+//            driver.switchTo().window(winHandle);
+//        }
+
 
 }

@@ -108,6 +108,7 @@ public class AchytyDTest {
         WebElement findStickFooterPanelDescription = driver.findElement(
                 By.xpath("//p[@class='stick-footer-panel__description']")
         );
+//        By.className - instead of By.xpath
 
         WebElement findButtonStickFooterPanelLink = driver.findElement(By.xpath(
                 "//button[@class=\"stick-footer-panel__link\"]")
@@ -126,6 +127,10 @@ public class AchytyDTest {
         Assert.assertEquals(actualResult, expectedResult);
         Assert.assertEquals(actualResultAllowAll, expectedResultAllowAll);
         Assert.assertEquals(actualResultManageCookies, expectedResultManageCookies);
+//        Assert.assert.True - method
+//        Assert.assertTrue(driver.findElement(By.className("stick-footer-panel_container")).isDisplayed)
+
+//        .size - method to see qty of elements - for 2 buttons Allow coolies, Manage cookies
 
         driver.quit();
     }
@@ -152,8 +157,7 @@ public class AchytyDTest {
         Thread.sleep(5000);
 
         WebElement findSupportDropDownMenu = driver.findElement(
-                By.xpath("//div[@id = 'support-dropdown']")
-        );
+                By.xpath("//div[@id = 'support-dropdown']/ul[@id = 'support-dropdown-menu']/li")).size(), 3);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click();", findSupportDropDownMenu);
         boolean b = findSupportDropDownMenu.isSelected();
@@ -164,15 +168,10 @@ public class AchytyDTest {
         }
         findSupportDropDownMenu.click();
 
-        WebElement findFaqInDropDown = driver.findElement(
-                By.xpath("//a[text() = 'FAQ']")
-        );
-        WebElement findHowToStartInDropDown = driver.findElement(
-                By.xpath("//a[text() = 'How to start']")
-        );
-        WebElement findAskAquestionInDropDown = driver.findElement(
-                By.xpath("//a[text() = 'Ask a question']")
-        );
+        WebElement findFaqInDropDown = driver.findElement(By.xpath("//a[text() = 'FAQ']"));
+        WebElement findHowToStartInDropDown = driver.findElement(By.xpath("//a[text() = 'How to start']"));
+        WebElement findAskAquestionInDropDown = driver.findElement(By.xpath("//a[text() = 'Ask a question']"));
+//         check 3 elements in dropdown with .size(), 3);
 
 //        String actualResult1 = findFaqInDropDown.getText();
 //        String actualResult2 = findHowToStartInDropDown.getText();
